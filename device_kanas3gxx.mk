@@ -17,7 +17,7 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
     $(LOCAL_PATH)/fstab.sc8830:root/fstab.sc8830 \
-    $(LOCAL_PATH)/modem_controlo:root/modem_control \
+    $(LOCAL_PATH)/modem_control:root/modem_control \
     $(LOCAL_PATH)/ueventd.sc8830.rc:root/ueventd.sc8830.rc
 
 $(call inherit-product, build/target/product/full.mk)
