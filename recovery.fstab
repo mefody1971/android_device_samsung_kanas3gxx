@@ -1,12 +1,8 @@
-#<src>                                                <mnt_point>  <type>  <mnt_flags and options>                     <fs_mgr_flags>
-/dev/block/platform/sprd-sdhci.3/by-name/efs			/efs            ext4		default                   recoveryonly
-/dev/block/platform/sprd-sdhci.0/mmcblk1p1				/sdcard         vfat		default                   recoveryonly
-/dev/block/platform/sprd-sdhci.3/by-name/system   		/system         ext4		default                   recoveryonly
-/dev/block/platform/sprd-sdhci.3/by-name/HIDDEN  		/preload        ext4		default                   recoveryonly
-/dev/block/platform/sprd-sdhci.3/by-name/userdata   	/data           ext4		default                   wait,length=-16384
-/dev/block/platform/sprd-sdhci.3/by-name/CSC			/cache          ext4		default                   recoveryonly
-/dev/block/platform/sprd-sdhci.3/by-name/KERNEL			/boot           emmc		default                   recoveryonly
-/dev/block/platform/sprd-sdhci.3/by-name/RECOVERY		/recovery       emmc		default                   recoveryonly
-/dev/block/platform/sprd-sdhci.3/by-name/MODEM			/modemcp        emmc		default                   recoveryonly
-/dev/block/platform/sprd-sdhci.3/by-name/WDSP		    /modemdsp       emmc		default                   recoveryonly
-
+# mount point		fstype		device
+/system			ext4		/dev/block/mmcblk0p20
+/data			ext4		/dev/block/mmcblk0p22
+/cache			ext4		/dev/block/mmcblk0p19
+/efs			ext4		/dev/block/mmcblk0p14
+/boot			emmc		/dev/block/mmcblk0p17
+/recovery		emmc		/dev/block/mmcblk0p18
+/external_sd		vfat		/dev/block/mmcblk1p1	/dev/block/mmcblk1	flags=display="Micro SD";storage;wipeingui;removable

@@ -17,9 +17,8 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_BOOTLOADER_BOARD_NAME := kanas3gxx
 
-BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_CMDLINE := init=/sbin/init root=/dev/ram rw initrd=0x11000000,16M console=ttyDCC0 mem=88M
+BOARD_KERNEL_PAGESIZE := 4096
 
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x105c0000
@@ -39,6 +38,7 @@ TARGET_PREBUILT_KERNEL := &(LOCAL_PATH)/kernel
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # fix resolution, sdcard & pixel format
+TARGET_USES_ION := true
 DEVICE_RESOLUTION := 480x800
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
