@@ -1,8 +1,11 @@
-# mount point		fstype		device
-/system			ext4		/dev/block/mmcblk0p20
-/data			ext4		/dev/block/mmcblk0p22
-/cache			ext4		/dev/block/mmcblk0p19
-/efs			ext4		/dev/block/mmcblk0p14
-/boot			emmc		/dev/block/mmcblk0p17
-/recovery		emmc		/dev/block/mmcblk0p18
-/external_sd		vfat		/dev/block/mmcblk1p1	/dev/block/mmcblk1	flags=display="Micro SD";storage;wipeingui;removable
+#<src>						<mnt_point>	<type>	<mnt_flags and options>	                <fs_mgr_flags>
+/dev/block/mmcblk0p17				/boot           emmc	default                                 defaults
+/dev/block/mmcblk0p18				/recovery       emmc	default                                 defaults
+/dev/block/mmcblk0p19				/cache          ext4	nosuid,nodev,barrier=1                  wait,check
+/dev/block/mmcblk0p14				/efs            ext4	ro,barrier=1                            wait
+/dev/block/mmcblk0p20   			/system         ext4	ro,barrier=1                            wait
+/dev/block/mmcblk0p22   			/data           ext4	nosuid,nodev,noauto_da_alloc,barrier=1  wait,length=-16384
+
+# VOLD
+/devices/platform/sprd-sdhci.0/mmc_host/mmc1	auto		vfat	defaults		voldmanaged=extSdCard:auto,noemulatedsd
+/devices/platform/goldfish_mmc.0		auto		vfat	defaults 		voldmanaged=sdcard:auto
